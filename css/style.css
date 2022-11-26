@@ -569,7 +569,7 @@ a:focus {
   display: inline-block;
   padding: 10px 45px;
   background-color: #ffffff;
-  color: #FEDF07;
+  color: #555555;
   border-radius: 5px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -756,7 +756,7 @@ a:focus {
 }
 
 .footer_section {
-  background: hwb(61 22% 5%);
+  background: #eff238;
   color: #555555;
   padding: 60px 0 15px 0;
   position: relative;
