@@ -508,11 +508,12 @@ a:focus {
 }
 
 .doctor_section .box .img-box {
-  width: 100%;
+  width: 100%;  
 }
 
 .doctor_section .box .img-box img {
   width: 100%;
+  max-height: 400px;
 }
 
 .doctor_section .box .detail-box {
@@ -567,17 +568,17 @@ a:focus {
 .doctor_section .btn-box a {
   display: inline-block;
   padding: 10px 45px;
-  background-color: #FEDF07;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #FEDF07;
   border-radius: 5px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  border: 1px solid #FEDF07;
+  border: 1px solid #ffffff;
 }
 
 .doctor_section .btn-box a:hover {
   background-color: transparent;
-  color: #FEDF07;
+  color: #ffffff;
 }
 
 .contact_section {
