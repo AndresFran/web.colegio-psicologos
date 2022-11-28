@@ -278,11 +278,11 @@ a:focus {
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 15px;
-  color: #ffffff;
+  color: #555555;
 }
 
 .slider_section .detail-box p {
-  color: #fefefe;
+  color: #555555;
   font-size: 14px;
 }
 
@@ -485,7 +485,7 @@ a:focus {
 }
 
 .doctor_section {
-  background: #FEDF07;
+  background: #fcbb59;
 }
 
 .doctor_section .heading_container {
