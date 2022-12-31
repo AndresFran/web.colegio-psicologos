@@ -815,6 +815,32 @@ a:focus {
   flex-direction: column;
 }
 
+.client_section .btn-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 45px;
+}
+
+.client_section .btn-box a {
+  display: inline-block;
+  padding: 10px 45px;
+  background-color: #FEDF07;
+  color: #ffffff;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 1px solid #FEDF07;
+}
+
+.client_section .btn-box a:hover {
+  background-color: transparent;
+  color: #FEDF07;
+}
+
 .client_section .box .detail-box .name img {
   width: 25px;
   margin-bottom: 5px;
@@ -1092,7 +1118,7 @@ a:focus {
 /*# sourceMappingURL=style.css.map */
 
 /* Ventana Modal*/
-.btn {
+.btm {
   position: relative;
   font-size: 1.2em;
   font-weight: 300;
@@ -1104,7 +1130,7 @@ a:focus {
   text-decoration: none;
 }
 
-.btn:hover {
+.btm:hover {
   background: #f5b14b;
   box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.22);
   color: #fff;
@@ -1211,4 +1237,12 @@ a:focus {
   padding: 10px;
   font-size: 30px;
   text-decoration: none;
+}
+
+.zoom {
+  transition: transform .2s;
+}
+
+.zoom:hover {
+  transform: scale(1.5);
 }

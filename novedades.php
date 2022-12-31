@@ -1,3 +1,6 @@
+<?PHP session_start();
+include('php/vista_novedades.php');
+?>
 <!DOCTYPE html>
 
 <html lang="es">
@@ -34,7 +37,6 @@
     <link href="css/responsive.css" rel="stylesheet" />
 
 </head>
-
 
 <body class="sub_page">
 
@@ -114,24 +116,7 @@
                     Novedades
                 </h2>
             </div>
-            <div class="row">
-                <div class="col-sm-6 col-lg-4 mx-auto">
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="images/novedades/000001.jpg" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h5>
-                                DIGESTO JURIDICO
-                            </h5>
-                            <h6 class="">
-                                03/05/2022
-                            </h6>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            <?PHP echo $novedades; ?>
         </div>
     </section>
 
