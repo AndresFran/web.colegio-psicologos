@@ -1,5 +1,5 @@
 <?PHP session_start();
-include('php/vista_novedades.php');
+include('php/vista_articulo.php');
 ?>
 <!DOCTYPE html>
 
@@ -50,7 +50,7 @@ include('php/vista_novedades.php');
         <header class="header_section">
             <div class="container">
                 <nav class="navbar navbar-expand-lg custom_nav-container ">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="index.php">
                         <img src="images/isologo.png" height="40" alt="">
                     </a>
 
@@ -61,7 +61,7 @@ include('php/vista_novedades.php');
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item active">
-                                <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="institucional.html"> Institucional</a>
@@ -107,50 +107,11 @@ include('php/vista_novedades.php');
 
    end department section -->
 
-    <!-- news section -->
-
-    <section class="news_section layout_padding">
-        <div class="container">
-            <div class="heading_container heading_center">
-                <h2>
-                    Novedades
-                </h2>
-            </div>
-            <?PHP echo $novedades; ?>
-        </div>
-    </section>
-
-    <!-- end news section -->
-
     <!-- about section -->
 
     <section class="about_section layout_padding">
         <div class="container  ">
-            <div class="row">
-                <div class="col-md-6 ">
-                    <div class="img-box">
-                        <img src="images/about-img.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="detail-box">
-                        <div class="heading_container">
-                            <h2>
-                                About <span>Us</span>
-                            </h2>
-                        </div>
-                        <p>
-                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-                            in some form, by injected humour, or randomised words which don't look even slightly believable. If you
-                            are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
-                            the middle of text. All
-                        </p>
-                        <a href="">
-                            Read More
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <?PHP echo $novedad; ?>
         </div>
     </section>
 
@@ -220,7 +181,7 @@ include('php/vista_novedades.php');
                             Links
                         </h4>
                         <div class="footer_links">
-                            <a class="active" href="index.html">
+                            <a class="active" href="index.php">
                                 Inicio
                             </a>
                             <a class="" href="institucional.html">
