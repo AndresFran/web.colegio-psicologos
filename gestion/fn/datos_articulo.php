@@ -16,7 +16,6 @@ if ($_REQUEST['abm'] != 'a') {
     $tipoNovedad = $articulo['tipoNovedad'];
     $archivoNovedad = $articulo['archivoNovedad'];
 } else {
-    $articulo = mysqli_fetch_assoc($rtsarticulo);
     $tituloNovedad = '';
     $fechaNovedad = '';
     $detalleNovedad = '';
