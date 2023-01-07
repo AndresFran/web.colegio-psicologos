@@ -1,5 +1,5 @@
 <?PHP
-include('fn/list_articulos.php');
+include('fn/datos_articulo.php');
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -25,14 +25,33 @@ include('fn/list_articulos.php');
         </div>
     </nav>
 
-
     <div class="container">
         <div class="card mt-5">
             <div class="card-header">
                 <h4 class="card-title">Novedades</h4>
             </div>
             <div class="card-body">
-                <?PHP echo $listado; ?>
+                <div class="row">
+                    <form action="fn/abm_inmuebles.php" method="GET">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="basicInput"><b>Titulo </b></label>
+                                <input type="text" class="form-control" id='tituloNovedad' name='tituloNovedad' placeholder="Titulo" value='<?PHP echo $tituloNovedad; ?>' require>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="basicInput"><b>Fecha </b></label>
+                                <input type="date" class="form-control" id='fechaNovedad' name='fechaNovedad' placeholder="Fecha" value='<?PHP echo $fechaNovedad; ?>' require>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label"><b>Detalle</b></label>
+                                <textarea class="form-control" id='detalleNovedad' name='detalleNovedad' rows="3"><?PHP echo $detalleNovedad; ?></textarea>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
         <footer>

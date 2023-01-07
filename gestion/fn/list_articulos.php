@@ -56,7 +56,7 @@ while ($articulos = mysqli_fetch_assoc($rtsnovedades)) {
     $listado .= "<td>" . $articulos['tituloNovedad'] . "</td>";
     $listado .= "<td>" . date('d/m/Y', strtotime($articulos['fechaAlta'])) . "</td>";
     $listado .= "<td><span class='badge bg-light-" . $btn . "'>" . $estado . "</span></td>";
-    $listado .= "<td><a href='inmueble_abm.php?idInmueble=" . $articulos['idInmueble'] . "&abm=m' class='btn btn-info me-1 mb-1'>Editar</a></td>";
+    $listado .= "<td><a href='articulo.php?idInmueble=" . $articulos['idInmueble'] . "&abm=m' class='btn btn-info me-1 mb-1'>Editar</a></td>";
     if ($articulos['baja'] == 0) {
         $listado .= "<td><a href='fn/abm_inmuebles.php?idInmueble=" . $articulos['idInmueble'] . "&abm=b' class='btn btn-danger me-1 mb-1'>Eliminar</a></td>";
     } else {

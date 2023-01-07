@@ -32,6 +32,9 @@ include('fn/list_articulos.php');
                 <h4 class="card-title">Novedades</h4>
             </div>
             <div class="card-body">
+                <div class="buttons">
+                    <a href="articulo.php?abm=a" class="btn btn-outline-success">Nuevo Articulo</a>
+                </div>
                 <?PHP echo $listado; ?>
             </div>
         </div>
