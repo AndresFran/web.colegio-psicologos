@@ -1,10 +1,13 @@
+<?PHP
+include('fn/list_articulos.php');
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout Vertical 1 Column - Mazer</title>
+    <title>Colegio Psicologos - Articulos</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/bootstrap.css">
@@ -26,13 +29,10 @@
     <div class="container">
         <div class="card mt-5">
             <div class="card-header">
-                <h4 class="card-title">Single Layout</h4>
+                <h4 class="card-title">Novedades</h4>
             </div>
             <div class="card-body">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus nemo quasi labore expedita?
-                    Veritatis
-                    at maxime id voluptates excepturi molestiae possimus blanditiis dicta consequuntur maiores suscipit,
-                    eveniet neque obcaecati doloribus.</p>
+                <?PHP echo $listado; ?>
             </div>
         </div>
         <footer>
