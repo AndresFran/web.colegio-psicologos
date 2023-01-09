@@ -34,7 +34,7 @@ while ($articulos = mysqli_fetch_assoc($rtsnovedades)) {
     $datosmodal .= "</button>";
     $datosmodal .= "</div>";
     $datosmodal .= "<div class='modal-body'>";
-    $datosmodal .= "<span class='badge bg-light-success'><i class='bi bi-house'></i>&nbsp;" . $articulos['fechaNovedad']  . "</span>";
+    $datosmodal .= "<span class='badge bg-light-success'><i class='bi bi-calendar'></i>&nbsp;" . $articulos['fechaNovedad']  . "</span>";
     $datosmodal .= "<p>";
     $datosmodal .= "<br><i class='bi bi-info-square-fill'></i>&nbsp;<b>Detalle:</b>&nbsp;" .  $articulos['detalleNovedad'];
     $datosmodal .= "</p>";
