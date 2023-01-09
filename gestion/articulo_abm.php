@@ -29,28 +29,40 @@ include('fn/datos_articulo.php');
             <div class="card-header">
                 <h4 class="card-title">Novedades</h4>
             </div>
-            <div class="page-heading">
-                <div class="page-title">
-                    <div class="row">
-                        <div class="col-12 col-md-6 order-md-1 order-last">
-                            <h3><?PHP echo $tituloNovedad; ?></h3>
-                            <p class="text-subtitle text-muted"><?PHP echo $fechaNovedad; ?> </p>
-                        </div>
-                    </div>
-                </div>
-                <section class="section">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">Imagen</h4>
-                        </div>
-                        <div class="card-body">
-                            <?PHP echo $detalleNovedad; ?>
-                            <div class="buttons">
-                                <a href="index.php" class="btn btn-warning me-1 mb-1">Volver</a>
+            <div class="card-body">
+                <div class="row">
+                    <form action="fn/abm_inmuebles.php" method="GET">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="basicInput"><b>Titulo </b></label>
+                                <input type="text" class="form-control" id='tituloNovedad' name='tituloNovedad' placeholder="Titulo" value='<?PHP echo $tituloNovedad; ?>' require>
                             </div>
+
+                            <div class="form-group">
+                                <label for="basicInput"><b>Fecha </b></label>
+                                <input type="date" class="form-control" id='fechaNovedad' name='fechaNovedad' placeholder="Fecha" value='<?PHP echo $fechaNovedad; ?>' require>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label"><b>Detalle</b></label>
+                                <textarea class="form-control" id='detalleNovedad' name='detalleNovedad' rows="3"><?PHP echo $detalleNovedad; ?></textarea>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label>Subir Im&aacute;gen</label><br>
+                                <input type="file" class="basic-filepond" name="archivoNovedad">
+                            </div>
+
+                            <div class="buttons">
+                                <input type="hidden" id="idNovedad" name="idNovedad" value="<?PHP echo $_REQUEST['idNovedad']; ?>" />
+                                <input type="hidden" id="abm" name="abm" value="<?PHP echo $_REQUEST['abm']; ?>" />
+                                <button type="submit" class="btn btn-success me-1 mb-1">Guardar</button>
+                                <a href="index.php" class="btn btn-warning me-1 mb-1">Cancelar</a>
+                            </div>
+
                         </div>
-                    </div>
-                </section>
+                    </form>
+                </div>
             </div>
         </div>
         <footer>
