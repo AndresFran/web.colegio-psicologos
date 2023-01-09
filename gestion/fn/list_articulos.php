@@ -11,6 +11,8 @@ $listado .= "<th>Fecha Articulo</th>";
 $listado .= "<th>Titulo</th>";
 $listado .= "<th>Fecha</th>";
 $listado .= "<th>Estado</th>";
+$listado .= "<th></th>";
+$listado .= "<th></th>";
 $listado .= "</tr>";
 $listado .= "</thead>";
 $listado .= "<tbody>";
@@ -51,12 +53,14 @@ while ($articulos = mysqli_fetch_assoc($rtsnovedades)) {
     $datosmodal .= "</div>";
 
     $listado .= "<tr>";
-    $listado .= "<td>" . $datosmodal . "</td>";
+    /*$listado .= "<td>" . $datosmodal . "</td>"; */
+    $listado .= "<td><a href='articulo.php?idNovedad=" . $articulos['idNovedad'] . "&abm=v' class='btn btn-success me-1 mb-1'><i class='bi bi-card-heading'></i></a></td>";
     $listado .= "<td>" . date('d/m/Y', strtotime($articulos['fechaNovedad'])) . "</td>";
     $listado .= "<td>" . $articulos['tituloNovedad'] . "</td>";
     $listado .= "<td>" . date('d/m/Y', strtotime($articulos['fechaAlta'])) . "</td>";
     $listado .= "<td><span class='badge bg-light-" . $btn . "'>" . $estado . "</span></td>";
-    $listado .= "<td><a href='articulo.php?idNovedad=" . $articulos['idNovedad'] . "&abm=m' class='btn btn-info me-1 mb-1'>Editar</a></td>";
+    $listado .= "<td><a href='articulo_abm.php?idNovedad=" . $articulos['idNovedad'] . "&abm=m' class='btn btn-info me-1 mb-1'>Editar</a></td>";
+
     if ($articulos['baja'] == 0) {
         $listado .= "<td><a href='fn/abm_articulo.php?idNovedad=" . $articulos['idNovedad'] . "&abm=b' class='btn btn-danger me-1 mb-1'>Eliminar</a></td>";
     } else {

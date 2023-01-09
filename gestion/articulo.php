@@ -33,8 +33,8 @@ include('fn/datos_articulo.php');
                 <div class="page-title">
                     <div class="row">
                         <div class="col-12 col-md-6 order-md-1 order-last">
-                            <h3><?PHP echo $tituloNovedad; ?></h3>
-                            <p class="text-subtitle text-muted"><?PHP echo $fechaNovedad; ?> </p>
+                            <h3>&nbsp;<?PHP echo $tituloNovedad; ?></h3>
+                            <p class="text-subtitle text-muted">&nbsp;<?PHP echo $fechaNovedad; ?> </p>
                         </div>
                     </div>
                 </div>
