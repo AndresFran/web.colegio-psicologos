@@ -31,7 +31,7 @@ include('fn/datos_articulo.php');
             </div>
             <div class="card-body">
                 <div class="row">
-                    <form action="fn/abm_inmuebles.php" method="GET">
+                    <form action="fn/abm_articulo.php" method="GET">
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="basicInput"><b>Titulo </b></label>
@@ -54,7 +54,7 @@ include('fn/datos_articulo.php');
                             </div>
 
                             <div class="buttons">
-                                <input type="hidden" id="idNovedad" name="idNovedad" value="<?PHP echo $_REQUEST['idNovedad']; ?>" />
+                                <input type="hidden" id="idNovedad" name="idNovedad" value="<?PHP echo $idNovedad; ?>" />
                                 <input type="hidden" id="abm" name="abm" value="<?PHP echo $_REQUEST['abm']; ?>" />
                                 <button type="submit" class="btn btn-success me-1 mb-1">Guardar</button>
                                 <a href="index.php" class="btn btn-warning me-1 mb-1">Cancelar</a>

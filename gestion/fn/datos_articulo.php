@@ -19,8 +19,9 @@ if ($_REQUEST['abm'] != 'a') {
     /*$imagen = "<a href='" . $archivo . "' target='_blank'><img src='" .  $archivo . "' height='40%'></a>";*/
     $imagen = "<img class='img-fluid w-100' src='" .  $archivo . "' alt=''>";
 } else {
+    $idNovedad = '';
     $tituloNovedad = '';
-    $fechaNovedad = '';
+    $fechaNovedad = date("Y-m-d");
     $detalleNovedad = '';
     $tipoNovedad = '';
     $archivoNovedad = '';

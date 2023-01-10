@@ -34,7 +34,7 @@ include('fn/list_articulos.php');
             </div>
             <div class="card-body">
                 <div class="buttons">
-                    <a href="articulo.php?abm=a" class="btn btn-outline-success">Nuevo Articulo</a>
+                    <a href="articulo_abm.php?abm=a" class="btn btn-outline-success">Nuevo Articulo</a>
                 </div>
                 <?PHP echo $listado; ?>
             </div>
