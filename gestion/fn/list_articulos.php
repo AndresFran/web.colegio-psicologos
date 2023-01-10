@@ -25,6 +25,8 @@ while ($articulos = mysqli_fetch_assoc($rtsnovedades)) {
         $btn = "danger";
     }
 
+    $imagen = ".../images/novedades/" . $articulo['archivoNovedad'];
+
     $datosmodal = "<button type='button' class='btn btn-primary block' data-bs-toggle='modal' data-bs-target='#DatosModal" . $articulos['idNovedad'] . "'><i class='bi bi-list-ul'></i></button>";
     $datosmodal .= "<div class='modal fade' id='DatosModal" . $articulos['idNovedad'] . "' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>";
     $datosmodal .= "<div class='modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable' role='document'>";

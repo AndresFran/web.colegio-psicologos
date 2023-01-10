@@ -30,23 +30,26 @@ include('fn/datos_articulo.php');
                 <h4 class="card-title">Novedades</h4>
             </div>
             <div class="page-heading">
-                <div class="page-title">
+
+                <!-- Basic card section start -->
+                <section id="content-types">
                     <div class="row">
-                        <div class="col-12 col-md-6 order-md-1 order-last">
-                            <h3>&nbsp;<?PHP echo $tituloNovedad; ?></h3>
-                            <p class="text-subtitle text-muted">&nbsp;<?PHP echo $fechaNovedad; ?> </p>
-                        </div>
-                    </div>
-                </div>
-                <section class="section">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">Imagen</h4>
-                        </div>
-                        <div class="card-body">
-                            <?PHP echo $detalleNovedad; ?>
-                            <div class="buttons">
-                                <a href="index.php" class="btn btn-warning me-1 mb-1">Volver</a>
+                        <div class="col-xl-4 col-md-6 col-sm-12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <h4 class="card-title"><?PHP echo $tituloNovedad; ?></h4>
+                                        <p class="card-text">
+                                            <?PHP echo $detalleNovedad; ?>
+                                        </p>
+                                    </div>
+                                    <?PHP echo $imagen; ?>
+
+                                </div>
+                                <div class="card-footer d-flex justify-content-between">
+                                    <span><?PHP echo $fechaNovedad; ?> </span>
+                                    <button class="btn btn-light-primary"><a href="index.php">Volver</a></button>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -15,6 +15,9 @@ if ($_REQUEST['abm'] != 'a') {
     $detalleNovedad = $articulo['detalleNovedad'];
     $tipoNovedad = $articulo['tipoNovedad'];
     $archivoNovedad = $articulo['archivoNovedad'];
+    $archivo = "../images/novedades/" .  $articulo['archivoNovedad'];
+    /*$imagen = "<a href='" . $archivo . "' target='_blank'><img src='" .  $archivo . "' height='40%'></a>";*/
+    $imagen = "<img class='img-fluid w-100' src='" .  $archivo . "' alt=''>";
 } else {
     $tituloNovedad = '';
     $fechaNovedad = '';
