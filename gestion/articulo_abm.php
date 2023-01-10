@@ -50,10 +50,11 @@ include('fn/datos_articulo.php');
 
                             <div class="form-group mb-3">
                                 <label>Subir Im&aacute;gen</label><br>
-                                <input type="file" class="basic-filepond" name="archivoNovedad">
+                                <input type="file" name="archivo" id="archivo">
                             </div>
 
                             <div class="buttons">
+                                <input type="hidden" id="tipoNovedad" name="tipoNovedad" value="IMG" />
                                 <input type="hidden" id="idNovedad" name="idNovedad" value="<?PHP echo $idNovedad; ?>" />
                                 <input type="hidden" id="abm" name="abm" value="<?PHP echo $_REQUEST['abm']; ?>" />
                                 <button type="submit" class="btn btn-success me-1 mb-1">Guardar</button>

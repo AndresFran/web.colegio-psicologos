@@ -1,6 +1,6 @@
 <?PHP
 include('conexion.php');
-$querynovedades = "SELECT * FROM novedad ORDER BY fechaNovedad DESC";
+$querynovedades = "SELECT * FROM novedad WHERE baja = 0 ORDER BY fechaNovedad DESC";
 $rtsnovedades = mysqli_query($conexion, $querynovedades);
 
 $novedades .= "<div class='row'>";
