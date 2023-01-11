@@ -201,7 +201,8 @@ if ($_REQUEST['abmi'] == 'i') { //Funcion Modificar Imagen
         $query = "UPDATE novedad  SET
         tituloNovedad='$_REQUEST[tituloNovedad]',
         fechaNovedad='$_REQUEST[fechaNovedad]',
-        detalleNovedad='$_REQUEST[detalleNovedad]'
+        detalleNovedad='$_REQUEST[detalleNovedad]',
+        tipoNovedad='$_REQUEST[tipoNovedad]'
         WHERE idNovedad = '$_REQUEST[idNovedad]' ";
         $result = mysqli_query($conexion, $query);
         if (mysqli_affected_rows($conexion) > 0) { ?>

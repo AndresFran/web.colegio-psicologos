@@ -19,6 +19,21 @@ if ($_REQUEST['abm'] != 'a') {
     $archivo = "../images/novedades/" .  $articulo['archivoNovedad'];
     /*$imagen = "<a href='" . $archivo . "' target='_blank'><img src='" .  $archivo . "' height='40%'></a>";*/
     $imagen = "<img class='img-fluid w-100' src='" .  $archivo . "' alt=''>";
+
+    switch ($tipoNovedad) {
+        case 'PDF':
+            $nomTipoNovedad = "PDF";
+            break;
+        case 'IMG':
+            $nomTipoNovedad = "Imagen";
+            break;
+        case 'VID':
+            $nomTipoNovedad = "Video";
+            break;
+        case 'TXT':
+            $nomTipoNovedad = "Solo Texto";
+            break;
+    };
 } else {
     $idNovedad = '';
     $tituloNovedad = '';

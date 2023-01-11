@@ -52,15 +52,23 @@ include('fn/datos_articulo.php');
                                 <div class="form-group mb-3">
                                     <label for="exampleFormControlTextarea1" class="form-label"><b>Tipo de Archivo</b></label>
                                     <select class="form-select" id="tipoNovedadd" name="tipoNovedad">
-                                        <option>IT</option>
-                                        <option>Blade Runner</option>
-                                        <option>Thor Ragnarok</option>
+                                        <?PHP if ($_REQUEST['abm'] == 'a') { ?>
+                                            <option selected value="IMG">Imagen</option>
+                                            <option value="VID">Video</option>
+                                            <option value="PDF">PDF</option>
+                                        <?PHP } else { ?>
+                                            <option selected value="<?PHP echo $tipoNovedad ?>">* <?PHP echo $nomTipoNovedad ?></option>
+                                            <option value="IMG">Imagen</option>
+                                            <option value="VID">Video</option>
+                                            <option value="PDF">PDF</option>
+                                        <?PHP } ?>
+
                                     </select>
                                 </div>
 
                                 <?PHP if (!empty($archivoNovedad)) { ?>
                                     <?PHP echo $imagen; ?>
-                                    <a href="fn/abm_articulo.php?archivoNovedad=<?PHP echo $archivoNovedad; ?>&idNovedad=<?PHP echo $_REQUEST['idNovedad']; ?>&abm=x" class="btn btn-danger me-1 mb-1"><i class="fa-solid fa-trash-can"'></i></i> Eliminar Imagen</a>
+                                    <a href="fn/abm_articulo.php?archivoNovedad=<?PHP echo $archivoNovedad; ?>&idNovedad=<?PHP echo $_REQUEST['idNovedad']; ?>&abm=x" class="btn btn-danger me-1 mb-1"><i class="fa-solid fa-trash-can"'></i></i> Eliminar Archivo</a>
                                     <br>&nbsp;</br>
                                 <?PHP } else { ?>
                                     <?PHP if ($_REQUEST['abm'] == 'a') { ?>
@@ -75,7 +83,7 @@ include('fn/datos_articulo.php');
                                                 <input type="file" name="archivo" id="archivo">
                                             </div>    
                                             <div class="buttons">
-                                                <input type="hidden" id="tipoNovedad" name="tipoNovedad" value="<?PHP echo $tipoNovedad ?>" /> 
+                                                <!--input type="hidden" id="tipoNovedad" name="tipoNovedad" value="<?PHP echo $tipoNovedad ?>" /--> 
                                                 <input type="hidden" id="idNovedad" name="idNovedad" value="<?PHP echo $idNovedad; ?>" />
                                                 <input type="hidden" id="abm" name="abmi" value="i" />
                                                 <button type="submit" class="btn btn-info me-1 mb-1">Subir Archivo</button>
@@ -86,7 +94,7 @@ include('fn/datos_articulo.php');
                                 <?PHP } ?>                            
                         
                             <div class="buttons">
-                                <input type="hidden" id="tipoNovedad" name="tipoNovedad" value="<?PHP echo $tipoNovedad ?>" /> 
+                                <!--input type="hidden" id="tipoNovedad" name="tipoNovedad" value="<?PHP echo $tipoNovedad ?>" /--> 
                                 <input type="hidden" id="idNovedad" name="idNovedad" value="<?PHP echo $idNovedad; ?>" />
                                 <input type="hidden" id="abm" name="abm" value="<?PHP echo $_REQUEST['abm']; ?>" />
                                 <button type="submit" class="btn btn-success me-1 mb-1">Guardar</button>
