@@ -8,6 +8,7 @@ error_reporting(E_ALL);
 if ($_REQUEST['abm'] != 'a') {
     include('conexion.php');
     $queryarticulo = "SELECT * FROM novedad WHERE idNovedad = '$_REQUEST[idNovedad]' ";
+    $idNovedad = $_REQUEST['idNovedad'];
     $rtsarticulo = mysqli_query($conexion, $queryarticulo);
     $articulo = mysqli_fetch_assoc($rtsarticulo);
     $tituloNovedad = $articulo['tituloNovedad'];
@@ -23,6 +24,6 @@ if ($_REQUEST['abm'] != 'a') {
     $tituloNovedad = '';
     $fechaNovedad = date("Y-m-d");
     $detalleNovedad = '';
-    $tipoNovedad = '';
+    $tipoNovedad = 'IMG';
     $archivoNovedad = '';
 }

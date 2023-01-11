@@ -31,38 +31,60 @@ include('fn/datos_articulo.php');
             </div>
             <div class="card-body">
                 <div class="row">
-                    <form action="fn/abm_articulo.php" method="GET">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="basicInput"><b>Titulo </b></label>
-                                <input type="text" class="form-control" id='tituloNovedad' name='tituloNovedad' placeholder="Titulo" value='<?PHP echo $tituloNovedad; ?>' require>
-                            </div>
+                    <div class="col-xl-4 col-md-6 col-sm-12">
+                        <form action="fn/abm_articulo.php" method="POST" enctype="multipart/form-data">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="basicInput"><b>Titulo </b></label>
+                                    <input type="text" class="form-control" id='tituloNovedad' name='tituloNovedad' placeholder="Titulo" value='<?PHP echo $tituloNovedad; ?>' require>
+                                </div>
 
-                            <div class="form-group">
-                                <label for="basicInput"><b>Fecha </b></label>
-                                <input type="date" class="form-control" id='fechaNovedad' name='fechaNovedad' placeholder="Fecha" value='<?PHP echo $fechaNovedad; ?>' require>
-                            </div>
+                                <div class="form-group">
+                                    <label for="basicInput"><b>Fecha </b></label>
+                                    <input type="date" class="form-control" id='fechaNovedad' name='fechaNovedad' placeholder="Fecha" value='<?PHP echo $fechaNovedad; ?>' require>
+                                </div>
 
-                            <div class="form-group mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label"><b>Detalle</b></label>
-                                <textarea class="form-control" id='detalleNovedad' name='detalleNovedad' rows="3"><?PHP echo $detalleNovedad; ?></textarea>
-                            </div>
+                                <div class="form-group mb-3">
+                                    <label for="exampleFormControlTextarea1" class="form-label"><b>Detalle</b></label>
+                                    <textarea class="form-control" id='detalleNovedad' name='detalleNovedad' rows="3"><?PHP echo $detalleNovedad; ?></textarea>
+                                </div>
+                                <?PHP if (!empty($archivoNovedad)) { ?>
+                                    <?PHP echo $imagen; ?>
+                                    <a href="fn/abm_articulo.php?archivoNovedad=<?PHP echo $archivoNovedad; ?>&idNovedad=<?PHP echo $_REQUEST['idNovedad']; ?>&abm=x" class="btn btn-danger me-1 mb-1"><i class="fa-solid fa-trash-can"'></i></i> Eliminar Imagen</a>
+                                    <br>&nbsp;</br>
+                            <?PHP } else { ?>
+                                <?PHP if ($_REQUEST['abm'] == 'a') { ?>
+                                    <div class="form-group mb-3">
+                                        <label>Subir Archivo</label><br>
+                                        <input type="file" name="archivo" id="archivo">
+                                    </div>
+                                <?PHP } else { ?>
+                                    <form action="fn/abm_articulo.php" method="POST" enctypes="multipart/form-data">
+                                        <div class="form-group mb-3">
+                                            <label>Subir Archivo</label><br>
+                                            <input type="file" name="archivo" id="archivo">
+                                        </div>    
+                                        <div class="buttons">
+                                            <input type="hidden" id="tipoNovedad" name="tipoNovedad" value="<?PHP echo $tipoNovedad ?>" /> 
+                                            <input type="hidden" id="idNovedad" name="idNovedad" value="<?PHP echo $idNovedad; ?>" />
+                                            <input type="hidden" id="abm" name="abmi" value="i" />
+                                            <button type="submit" class="btn btn-info me-1 mb-1">Subir Archivo</button>
+                                        </div>
+                                    </form>
+                                <?PHP } ?>
 
-                            <div class="form-group mb-3">
-                                <label>Subir Im&aacute;gen</label><br>
-                                <input type="file" name="archivo" id="archivo">
-                            </div>
-
+                            <?PHP } ?>                            
+                        
                             <div class="buttons">
-                                <input type="hidden" id="tipoNovedad" name="tipoNovedad" value="IMG" />
+                                <input type="hidden" id="tipoNovedad" name="tipoNovedad" value="<?PHP echo $tipoNovedad ?>" /> 
                                 <input type="hidden" id="idNovedad" name="idNovedad" value="<?PHP echo $idNovedad; ?>" />
                                 <input type="hidden" id="abm" name="abm" value="<?PHP echo $_REQUEST['abm']; ?>" />
                                 <button type="submit" class="btn btn-success me-1 mb-1">Guardar</button>
                                 <a href="index.php" class="btn btn-warning me-1 mb-1">Cancelar</a>
-                            </div>
-
+                            </div>                            
                         </div>
                     </form>
+                    </div>    
                 </div>
             </div>
         </div>
@@ -86,12 +108,10 @@ include('fn/datos_articulo.php');
     <script src="assets/vendors/simple-datatables/simple-datatables.js"></script>
     <script>
         // Simple Datatable
-        let table1 = document.querySelector('#table1');
-        let dataTable = new simpleDatatables.DataTable(table1);
-    </script>
+        let table1 = document.querySelector(' #table1'); let dataTable=new simpleDatatables.DataTable(table1); </script>
 
-    <script src="https://kit.fontawesome.com/1ffc2bde27.js" crossorigin="anonymous"></script>
-    <script src="assets/js/main.js"></script>
+                                            <script src="https://kit.fontawesome.com/1ffc2bde27.js" crossorigin="anonymous"></script>
+                                            <script src="assets/js/main.js"></script>
 </body>
 
 </html>
