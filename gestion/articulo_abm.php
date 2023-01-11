@@ -52,28 +52,28 @@ include('fn/datos_articulo.php');
                                     <?PHP echo $imagen; ?>
                                     <a href="fn/abm_articulo.php?archivoNovedad=<?PHP echo $archivoNovedad; ?>&idNovedad=<?PHP echo $_REQUEST['idNovedad']; ?>&abm=x" class="btn btn-danger me-1 mb-1"><i class="fa-solid fa-trash-can"'></i></i> Eliminar Imagen</a>
                                     <br>&nbsp;</br>
-                            <?PHP } else { ?>
-                                <?PHP if ($_REQUEST['abm'] == 'a') { ?>
-                                    <div class="form-group mb-3">
-                                        <label>Subir Archivo</label><br>
-                                        <input type="file" name="archivo" id="archivo">
-                                    </div>
                                 <?PHP } else { ?>
-                                    <form action="fn/abm_articulo.php" method="POST" enctypes="multipart/form-data">
+                                    <?PHP if ($_REQUEST['abm'] == 'a') { ?>
                                         <div class="form-group mb-3">
                                             <label>Subir Archivo</label><br>
                                             <input type="file" name="archivo" id="archivo">
-                                        </div>    
-                                        <div class="buttons">
-                                            <input type="hidden" id="tipoNovedad" name="tipoNovedad" value="<?PHP echo $tipoNovedad ?>" /> 
-                                            <input type="hidden" id="idNovedad" name="idNovedad" value="<?PHP echo $idNovedad; ?>" />
-                                            <input type="hidden" id="abm" name="abmi" value="i" />
-                                            <button type="submit" class="btn btn-info me-1 mb-1">Subir Archivo</button>
                                         </div>
-                                    </form>
-                                <?PHP } ?>
+                                    <?PHP } else { ?>
+                                        <form action="fn/abm_articulo.php" method="POST" enctypes="multipart/form-data">
+                                            <div class="form-group mb-3">
+                                                <label>Subir Archivo</label><br>
+                                                <input type="file" name="archivo" id="archivo">
+                                            </div>    
+                                            <div class="buttons">
+                                                <input type="hidden" id="tipoNovedad" name="tipoNovedad" value="<?PHP echo $tipoNovedad ?>" /> 
+                                                <input type="hidden" id="idNovedad" name="idNovedad" value="<?PHP echo $idNovedad; ?>" />
+                                                <input type="hidden" id="abm" name="abmi" value="i" />
+                                                <button type="submit" class="btn btn-info me-1 mb-1">Subir Archivo</button>
+                                            </div>
+                                        </form>
+                                    <?PHP } ?>
 
-                            <?PHP } ?>                            
+                                <?PHP } ?>                            
                         
                             <div class="buttons">
                                 <input type="hidden" id="tipoNovedad" name="tipoNovedad" value="<?PHP echo $tipoNovedad ?>" /> 
