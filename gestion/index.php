@@ -19,13 +19,13 @@ include('fn/list_articulos.php');
 </head>
 
 <body>
-    <nav class="navbar navbar-light">
+    <!-- <nav class="navbar navbar-light">
         <div class="container d-block">
-            <a class="navbar-brand ms-4" href="index.html">
+            <a class="navbar-brand ms-4" href="index.php">
                 <img src="assets/images/logo/logo.png">
             </a>
         </div>
-    </nav>
+    </nav> -->
 
     <div class="container">
         <div class="card mt-5">
