@@ -48,6 +48,16 @@ include('fn/datos_articulo.php');
                                     <label for="exampleFormControlTextarea1" class="form-label"><b>Detalle</b></label>
                                     <textarea class="form-control" id='detalleNovedad' name='detalleNovedad' rows="3"><?PHP echo $detalleNovedad; ?></textarea>
                                 </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="exampleFormControlTextarea1" class="form-label"><b>Tipo de Archivo</b></label>
+                                    <select class="form-select" id="tipoNovedadd" name="tipoNovedad">
+                                        <option>IT</option>
+                                        <option>Blade Runner</option>
+                                        <option>Thor Ragnarok</option>
+                                    </select>
+                                </div>
+
                                 <?PHP if (!empty($archivoNovedad)) { ?>
                                     <?PHP echo $imagen; ?>
                                     <a href="fn/abm_articulo.php?archivoNovedad=<?PHP echo $archivoNovedad; ?>&idNovedad=<?PHP echo $_REQUEST['idNovedad']; ?>&abm=x" class="btn btn-danger me-1 mb-1"><i class="fa-solid fa-trash-can"'></i></i> Eliminar Imagen</a>
