@@ -61,6 +61,7 @@ include('fn/datos_articulo.php');
                                             <option value="IMG">Imagen</option>
                                             <option value="VID">Video</option>
                                             <option value="PDF">PDF</option>
+                                            <option value="TXT">Solo Texto</option>
                                         <?PHP } ?>
 
                                     </select>

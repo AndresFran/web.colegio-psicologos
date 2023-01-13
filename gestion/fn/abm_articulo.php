@@ -56,6 +56,9 @@ if ($_REQUEST['abm'] == 'a') {
                 case 'image/gif':
                     $qtipo = "gif";
                     break;
+                default:
+                    $qtipo = "mp4";
+                    break;;
             };
 
             $nombre = str_pad($idNovedad, 6, "0", STR_PAD_LEFT) . "." . $qtipo;
@@ -162,6 +165,12 @@ if ($_REQUEST['abmi'] == 'i') { //Funcion Modificar Imagen
                 break;
             case 'image/gif':
                 $qtipo = "gif";
+                break;
+                /*case 'video/mp4':
+                $qtipo = "mp4";
+                break; */
+            default:
+                $qtipo = "mp4";
                 break;
         };
 

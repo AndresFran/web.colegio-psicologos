@@ -9,17 +9,23 @@ $articulo = mysqli_fetch_assoc($rtsarticulo);
 
 $novedad .= "<div class='col-md-6'>";
 $novedad .= "<div class='img-box'>";
-if ($articulo['archivoNovedad'] == 'IMG') {
+
+if ($articulo['tipoNovedad'] == 'IMG') {
     $novedad .= "<a href='#modal'><img src='images/novedades/" . $articulo['archivoNovedad'] . "' alt=''></a>";
 }
-if ($articulo['archivoNovedad'] == 'VID') {
-    $novedad .= "<video width='auto'  height='auto' controls poster='video.png'>";
+if ($articulo['tipoNovedad'] == 'VID') {
+    $novedad .= "<video width='400px'  height='auto' controls poster='video.png'>";
     $novedad .= "<source src='images/novedades/" . $articulo['archivoNovedad'] . "' type='video/mp4'>";
     $novedad .= "</video>";
+    /*  $novedad .= "<a href='images/novedades/" . $articulo['archivoNovedad'] . "'><img src='images/novedades/video.png' alt=''></a>"; */
 }
-if ($articulo['archivoNovedad'] == 'PDF') {
-    $novedad .= "<a href='images/novedades/" . $articulo['archivoNovedad'] . "'><img src='images/novedades/pdf.png' alt=''></a>";
+if ($articulo['tipoNovedad'] == 'PDF') {
+    $novedad .= "<a href='images/novedades/" . $articulo['archivoNovedad'] . "' target='_BLANK'><img src='images/novedades/icopdf.png' height='100px'></a>";
 }
+if ($articulo['tipoNovedad'] == 'TXT') {
+    $novedad .= "<img src='images/novedades/txt.png' alt=''>";
+}
+
 $novedad .= "</div>";
 $novedad .= "</div>";
 $novedad .= "<div class='col-md-6'>";
@@ -33,7 +39,7 @@ $novedad .= "<p><b>";
 $novedad .= date('d/m/Y', strtotime($articulo['fechaNovedad']));
 $novedad .= "</b></p>";
 $novedad .= "<p>";
-$novedad .= $articulo['textoNovedad'];
+$novedad .= $articulo['detalleNovedad'];
 $novedad .= "</p>";
 $novedad .= "<a href='javascript:history.back()'>Volver</a>";
 $novedad .= "</div>";

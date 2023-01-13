@@ -18,20 +18,26 @@ if ($_REQUEST['abm'] != 'a') {
     $archivoNovedad = $articulo['archivoNovedad'];
     $archivo = "../images/novedades/" .  $articulo['archivoNovedad'];
     /*$imagen = "<a href='" . $archivo . "' target='_blank'><img src='" .  $archivo . "' height='40%'></a>";*/
-    $imagen = "<img class='img-fluid w-100' src='" .  $archivo . "' alt=''>";
-
+    //$imagen = "<img class='img-fluid w-100' src='" .  $archivo . "' alt=''>";
+    $imagen = "";
     switch ($tipoNovedad) {
         case 'PDF':
             $nomTipoNovedad = "PDF";
+            $imagen .= "<a href='" . $archivo . "' target='_BLANK'><img src='../images/novedades/icopdf.png' height='100px'></a>";
             break;
         case 'IMG':
             $nomTipoNovedad = "Imagen";
+            $imagen .= "<img class='img-fluid w-100' src='" .  $archivo . "' alt=''>";
             break;
         case 'VID':
             $nomTipoNovedad = "Video";
+            $imagen .= "<video width='auto'  height='400px' controls poster='../images/novedades/video.png'>";
+            $imagen .= "<source src='" . $archivo . "' type='video/mp4'>";
+            $imagen .= "</video>";
             break;
         case 'TXT':
             $nomTipoNovedad = "Solo Texto";
+            $imagen .= "";
             break;
     };
 } else {

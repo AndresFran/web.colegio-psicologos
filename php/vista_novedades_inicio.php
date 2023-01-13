@@ -7,16 +7,22 @@ $novedades .= "<div class='row'>";
 
 while ($novedad = mysqli_fetch_assoc($rtsnovedades)) {
 
-    if ($articulo['archivoNovedad'] == 'IMG') {
+    //$preview = $novedad['archivoNovedad'];
+
+    if ($novedad['tipoNovedad'] == 'IMG') {
         $preview = $novedad['archivoNovedad'];
     }
 
-    if ($articulo['archivoNovedad'] == 'VID' or $articulo['archivoNovedad'] == 'VYT') {
+    if ($novedad['tipoNovedad'] == 'VID' or $novedad['archivoNovedad'] == 'VYT') {
         $preview = "video.png";
     }
 
-    if ($articulo['archivoNovedad'] == 'PDF') {
+    if ($novedad['tipoNovedad'] == 'PDF') {
         $preview = "pdf.png";
+    }
+
+    if ($novedad['tipooNovedad'] == 'TXT') {
+        $preview = "txt.png";
     }
 
     $novedades .= "<div class='col-sm-6 col-lg-4 mx-auto'>";
