@@ -27,7 +27,22 @@ while ($articulos = mysqli_fetch_assoc($rtsnovedades)) {
 
     $imagen = ".../images/novedades/" . $articulo['archivoNovedad'];
 
-    $datosmodal = "<button type='button' class='btn btn-primary block' data-bs-toggle='modal' data-bs-target='#DatosModal" . $articulos['idNovedad'] . "'><i class='bi bi-list-ul'></i></button>";
+    switch ($articulos['tipoNovedad']) {
+        case 'PDF':
+            $icoTipoNovedad = "bi bi-file-text";
+            break;
+        case 'IMG':
+            $icoTipoNovedad = "bi bi-card-image";
+            break;
+        case 'VID':
+            $icoTipoNovedad = "bi bi-youtube";
+            break;
+        case 'TXT':
+            $icoTipoNovedad = "bi bi-card-text";
+            break;
+    };
+
+    $datosmodal = "<button type='button' class='btn btn-primary block' data-bs-toggle='modal' data-bs-target='#DatosModal" . $articulos['idNovedad'] . "'><i class='" . $icoTipoNovedad . "'></i></button>";
     $datosmodal .= "<div class='modal fade' id='DatosModal" . $articulos['idNovedad'] . "' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>";
     $datosmodal .= "<div class='modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable' role='document'>";
     $datosmodal .= "<div class='modal-content'>";
@@ -56,7 +71,7 @@ while ($articulos = mysqli_fetch_assoc($rtsnovedades)) {
 
     $listado .= "<tr>";
     /*$listado .= "<td>" . $datosmodal . "</td>"; */
-    $listado .= "<td><a href='articulo.php?idNovedad=" . $articulos['idNovedad'] . "&abm=v' class='btn btn-success me-1 mb-1'><i class='bi bi-card-heading'></i></a></td>";
+    $listado .= "<td><a href='articulo.php?idNovedad=" . $articulos['idNovedad'] . "&abm=v' class='btn btn-success me-1 mb-1'><i class='" . $icoTipoNovedad . "'></i></a></td>";
     $listado .= "<td>" . date('d/m/Y', strtotime($articulos['fechaNovedad'])) . "</td>";
     $listado .= "<td>" . $articulos['tituloNovedad'] . "</td>";
     $listado .= "<td>" . date('d/m/Y', strtotime($articulos['fechaAlta'])) . "</td>";
