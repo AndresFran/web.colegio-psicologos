@@ -9,7 +9,17 @@ $articulo = mysqli_fetch_assoc($rtsarticulo);
 
 $novedad .= "<div class='col-md-6'>";
 $novedad .= "<div class='img-box'>";
-$novedad .= "<a href='#modal'><img src='images/novedades/" . $articulo['archivoNovedad'] . "' alt=''></a>";
+if ($articulo['archivoNovedad'] == 'IMG') {
+    $novedad .= "<a href='#modal'><img src='images/novedades/" . $articulo['archivoNovedad'] . "' alt=''></a>";
+}
+if ($articulo['archivoNovedad'] == 'VID') {
+    $novedad .= "<video width='auto'  height='auto' controls poster='video.png'>";
+    $novedad .= "<source src='images/novedades/" . $articulo['archivoNovedad'] . "' type='video/mp4'>";
+    $novedad .= "</video>";
+}
+if ($articulo['archivoNovedad'] == 'PDF') {
+    $novedad .= "<a href='images/novedades/" . $articulo['archivoNovedad'] . "'><img src='images/novedades/pdf.png' alt=''></a>";
+}
 $novedad .= "</div>";
 $novedad .= "</div>";
 $novedad .= "<div class='col-md-6'>";
